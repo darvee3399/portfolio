@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Education - Portfolio Website</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">shahul</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html" class="active">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+    <section class="education">
+        <h2>Education</h2>
+        <div class="education-container">
+            <div class="education-item">
+                <div class="education-year">2021 - Present</div>
+                <h3>B.tech in computer Science</h3>
+                <h4>jct college of engineering and Technology</h4>
+                <p>Currently pursuing my degree with a focus on Software Engineering and Artificial Intelligence. Maintaining a strong academic record while participating in various technical projects and competitions.</p>
+                <ul class="achievements">
+                    <li>finished second inweb design hackathontamilnadu-2024</li>
+                    <li>aspiring web developer and an creative writer</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script>
+        let menuBtn = document.querySelector('.menu-btn');
+        let nav = document.querySelector('nav');
+        
+        menuBtn.onclick = () => {
+            nav.classList.toggle('active');
+            menuBtn.classList.toggle('fa-times');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
+                nav.classList.remove('active');
+                menuBtn.classList.remove('fa-times');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.onclick = () => {
+                nav.classList.remove('active');
+                menuBtn.classList.remove('fa-times');
+            }
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Experience - Portfolio Website</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">shahul</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html" class="active">Experience</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <section class="experience">
+        <h2>Experience</h2>
+        <div class="experience-container">
+            <div class="experience-item">
+                <div class="experience-year">2023 - Present</div>
+                <h3>Web Development /SOFTWARE DEVELOPERIntern</h3>
+                <h4>YUGA YATRA RETAIL</h4>
+                <p>Working on front-end development using React and modern JavaScript frameworks. Collaborating with senior developers on various client projects.</p>
+                <ul class="responsibilities">
+                    <li>Developed responsive web applications</li>
+                    <li>Implemented user interface components</li>
+                    <li>Participated in code reviews and team meetings</li>
+                </ul>
+            </div>
+            
+            <div class="projects">
+                <h3>Personal Projects</h3>
+                <div class="project-item">
+                    <h4>E-commerce Website</h4>
+                    <p>Built a full-stack e-commerce platform using MERN stack (MongoDB, Express.js, React, Node.js)</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> View Code</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+                
+                <div class="project-item">
+                    <h4>Weather App</h4>
+                    <p>Created a weather application using OpenWeather API and JavaScript</p>
+                    <div class="project-links">
+                        <a href="#"><i class="fab fa-github"></i> View Code</a>
+                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        let menuBtn = document.querySelector('.menu-btn');
+        let nav = document.querySelector('nav');
+        
+        menuBtn.onclick = () => {
+            nav.classList.toggle('active');
+            menuBtn.classList.toggle('fa-times');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
+                nav.classList.remove('active');
+                menuBtn.classList.remove('fa-times');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.onclick = () => {
+                nav.classList.remove('active');
+                menuBtn.classList.remove('fa-times');
+            }
+        });
+    </script>
+</body>
+</html> 
