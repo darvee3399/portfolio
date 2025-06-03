@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>shahul's portfolio</title>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">shahul</a>
+
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+    <section class="home">
+        <div class="home-img">
+            <img src="main.jpeg" alt="me">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>shahul</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>I'm a Computer Science student who enjoys building simple, useful tools with code. I'm especially curious about how AI and automation can solve everyday problems and make work more efficient. I'm still learning, experimenting, and growing—but I'm driven by the hope that what I create can genuinely help people. This portfolio reflects my journey so far, and the direction I'm excited to keep moving in..</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/shahul-hameed-darvesh-44772b358/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/darvee3399" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/darvee_ig/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="mailto:shahulhameeddarvesh@gmail.com?subject=Interest%20in%20Hiring%20You&body=Hi%20Shahul,%0D%0A%0D%0AI'm%20interested%20in%20discussing%20a%20potential%20opportunity%20with%20you." class="btn">Hire me</a>
+        </div>
+    </section>
+
+    <script>
+        let menuBtn = document.querySelector('.menu-btn');
+        let nav = document.querySelector('nav');
+        
+        menuBtn.onclick = () => {
+            nav.classList.toggle('active');
+            menuBtn.classList.toggle('fa-times');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
+                nav.classList.remove('active');
+                menuBtn.classList.remove('fa-times');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.onclick = () => {
+                nav.classList.remove('active');
+                menuBtn.classList.remove('fa-times');
+            }
+        });
+    </script>
+</body>
+</html>
